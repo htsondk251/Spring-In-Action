@@ -1,0 +1,9 @@
+package com.example.tacocloud.entity.enums;
+
+public enum Type {
+    WRAP,
+    PROTEIN,
+    BEGGIES,
+    CHEESE,
+    SAUCE
+}

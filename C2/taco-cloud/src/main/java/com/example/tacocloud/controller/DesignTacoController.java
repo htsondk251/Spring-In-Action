@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import com.example.tacocloud.entity.Ingredient;
 import com.example.tacocloud.entity.Taco;
 import com.example.tacocloud.entity.Ingredient.Type;
@@ -46,11 +48,11 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processDesign(Taco design, Errors errors) {
+    public String processDesign(@Valid Taco design, Errors errors) {
         if (errors.hasErrors()) {
             return "design";
         }
-        
+
         log.info("Processing design: " + design);
 
         return "redirect:/orders/current";
